@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutsch Lernen — Интерактивный учебник A1–B1</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇩🇪</text></svg>">
+</head>
+<body>
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div style="display: flex; align-items: center; gap: 0.5rem;">
+      <span style="font-size: 1.4rem;">🇩🇪</span>
+      <span style="font-weight: 700; color: var(--green-700);">Deutsch Lernen</span>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Открыть меню">
+      ☰
+    </button>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="app">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">🇩🇪</div>
+        <div>
+          <div class="sidebar-title">Deutsch Lernen</div>
+          <div class="sidebar-subtitle">Курс A1 → B1</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-route="home">
+          <span class="nav-icon">🏠</span>
+          <span>Главная</span>
+        </button>
+
+        <button class="nav-item" data-route="curriculum" data-param="A1">
+          <span class="nav-icon">📋</span>
+          <span>Программа A1–B1</span>
+        </button>
+
+        <button class="nav-item" data-route="texts">
+          <span class="nav-icon">📖</span>
+          <span>Слова через тексты</span>
+        </button>
+
+        <button class="nav-item" data-route="dictionary">
+          <span class="nav-icon">🃏</span>
+          <span>Мой словарь</span>
+          <span class="nav-badge" id="dictDueBadge" style="display: none;">0</span>
+        </button>
+
+        <button class="nav-item" data-route="builder">
+          <span class="nav-icon">🏗</span>
+          <span>Тренажёр предложений</span>
+        </button>
+
+        <button class="nav-item" data-route="progress">
+          <span class="nav-icon">📊</span>
+          <span>Прогресс и ошибки</span>
+          <span class="nav-badge" id="progressMistakesBadge" style="display: none; background: var(--red-100); color: var(--red-600);">0</span>
+        </button>
+      </nav>
+
+      <!-- Bottom Goal Info -->
+      <div style="padding: 1.25rem; border-top: 1px solid var(--border-light); font-size: 0.8rem; color: var(--text-muted); background: var(--bg-sidebar);">
+        <div style="font-weight: 700; color: var(--text-secondary); margin-bottom: 0.2rem;">
+          🎯 Goethe-Zertifikat B1
+        </div>
+        <div>Сохранение прогресса в браузере (localStorage)</div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content" id="mainApp">
+      <!-- Dynamic Views Loaded Here -->
+    </main>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Educational Data Scripts -->
+  <script src="data/curriculum.js"></script>
+  <script src="data/lessons-1-4.js"></script>
+  <script src="data/lessons-5-8.js"></script>
+  <script src="data/lessons-9-12.js"></script>
+  <script src="data/vocabulary-sets.js"></script>
+  <script src="data/sentence-builder.js"></script>
+
+  <!-- Application Logic -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
